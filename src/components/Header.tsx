@@ -1,0 +1,79 @@
+import { Button } from "@/components/ui/button";
+import { Home, Menu } from "lucide-react";
+import { useState } from "react";
+
+export const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navItems = [
+    { label: "Home", href: "#home" },
+    { label: "Leistungen", href: "#services" },
+    { label: "Über uns", href: "#about" },
+    { label: "Kontakt", href: "#contact" },
+  ];
+
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
+      <nav className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <div className="flex items-center gap-2">
+            <div className="w-10 h-10 bg-gradient-accent rounded-lg flex items-center justify-center">
+              <Home className="w-6 h-6 text-accent-foreground" />
+            </div>
+            <div>
+              <span className="font-bold text-xl text-foreground">Steinke</span>
+              <span className="block text-xs text-muted-foreground -mt-1">Immobilien</span>
+            </div>
+          </div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-8">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="text-foreground/80 hover:text-accent transition-colors font-medium"
+              >
+                {item.label}
+              </a>
+            ))}
+            <Button variant="hero" size="sm">
+              Anfragen
+            </Button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden p-2"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Menu"
+          >
+            <Menu className="w-6 h-6" />
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="md:hidden py-4 border-t border-border/50">
+            <div className="flex flex-col gap-4">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="text-foreground/80 hover:text-accent transition-colors font-medium py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </a>
+              ))}
+              <Button variant="hero" className="w-full mt-2">
+                Anfragen
+              </Button>
+            </div>
+          </div>
+        )}
+      </nav>
+    </header>
+  );
+};
