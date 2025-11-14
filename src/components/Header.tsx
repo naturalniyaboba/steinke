@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Home, Menu } from "lucide-react";
 import { useState } from "react";
+import { ContactFormDialog } from "@/components/ContactFormDialog";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
 
   const navItems = [
     { label: "Home", href: "#home" },
@@ -38,7 +40,7 @@ export const Header = () => {
                 {item.label}
               </a>
             ))}
-            <Button variant="hero" size="sm">
+            <Button variant="hero" size="sm" onClick={() => setIsContactFormOpen(true)}>
               Anfragen
             </Button>
           </div>
@@ -67,13 +69,15 @@ export const Header = () => {
                   {item.label}
                 </a>
               ))}
-              <Button variant="hero" className="w-full mt-2">
+              <Button variant="hero" className="w-full mt-2" onClick={() => setIsContactFormOpen(true)}>
                 Anfragen
               </Button>
             </div>
           </div>
         )}
       </nav>
+      
+      <ContactFormDialog open={isContactFormOpen} onOpenChange={setIsContactFormOpen} />
     </header>
   );
 };
