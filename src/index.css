@@ -38,7 +38,7 @@ All colors MUST be HSL.
 
     --radius: 0.5rem;
     
-    --gradient-hero: linear-gradient(135deg, hsl(217 91% 15% / 0.95), hsl(217 91% 25% / 0.90));
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 15% / 0.7), hsl(217 91% 25% / 0.6));
     --gradient-accent: linear-gradient(135deg, hsl(38 92% 50%), hsl(45 100% 60%));
     
     --shadow-elegant: 0 10px 40px -10px hsl(217 91% 15% / 0.2);
@@ -92,7 +92,7 @@ All colors MUST be HSL.
     --input: 217 32.6% 17.5%;
     --ring: 38 92% 50%;
     
-    --gradient-hero: linear-gradient(135deg, hsl(217 91% 8% / 0.95), hsl(217 91% 15% / 0.90));
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 8% / 0.7), hsl(217 91% 15% / 0.6));
     --gradient-accent: linear-gradient(135deg, hsl(38 92% 50%), hsl(45 100% 60%));
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
