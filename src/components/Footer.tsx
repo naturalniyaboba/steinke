@@ -18,8 +18,8 @@ export const Footer = () => {
               </div>
             </div>
             <p className="text-primary-foreground/80 max-w-md">
-              Ihr zuverlässiger Partner für In- und Auslandsimmobilien. 
-              Spezialisiert auf den Großraum Leipzig und internationale Märkte.
+              Ihr zuverlässiger Partner für In- und Auslandsimmobilien. Spezialisiert auf den Großraum Leipzig und
+              internationale Märkte.
             </p>
           </div>
 
@@ -56,7 +56,7 @@ export const Footer = () => {
             <ul className="space-y-2 text-primary-foreground/80">
               <li>Großraum Leipzig</li>
               <li>info@steinke-immobilien.com</li>
-              <li>+49 (0) 341 XXX XXXX</li>
+              <li>+49 (0) 157 387 180 34</li>
             </ul>
           </div>
         </div>
