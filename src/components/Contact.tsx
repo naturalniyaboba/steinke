@@ -6,8 +6,8 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Telefon",
-    content: "+49 (0) 341 XXX XXXX",
-    link: "tel:+493410000000",
+    content: "+49 (0) 157 387 180 34",
+    link: "tel:+49015738718034",
   },
   {
     icon: Mail,
@@ -28,13 +28,11 @@ export const Contact = () => {
     <section className="py-24 bg-background relative overflow-hidden">
       {/* Decorative Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Kontaktieren Sie uns
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Kontaktieren Sie uns</h2>
             <p className="text-xl text-muted-foreground">
               Wir freuen uns auf Ihre Anfrage und beraten Sie gerne persönlich
             </p>
@@ -42,8 +40,8 @@ export const Contact = () => {
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {contactInfo.map((info, index) => (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className="text-center hover:shadow-elegant transition-all duration-300 border-border/50"
               >
                 <CardContent className="pt-8 pb-8">
@@ -52,10 +50,7 @@ export const Contact = () => {
                   </div>
                   <h3 className="text-lg font-semibold mb-2">{info.title}</h3>
                   {info.link ? (
-                    <a 
-                      href={info.link} 
-                      className="text-muted-foreground hover:text-accent transition-colors"
-                    >
+                    <a href={info.link} className="text-muted-foreground hover:text-accent transition-colors">
                       {info.content}
                     </a>
                   ) : (
@@ -68,18 +63,12 @@ export const Contact = () => {
 
           <Card className="bg-gradient-to-br from-primary to-primary/80 border-0 shadow-elegant">
             <CardContent className="p-12 text-center">
-              <h3 className="text-3xl font-bold text-primary-foreground mb-4">
-                Bereit für Ihre Traumimmobilie?
-              </h3>
+              <h3 className="text-3xl font-bold text-primary-foreground mb-4">Bereit für Ihre Traumimmobilie?</h3>
               <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
-                Lassen Sie uns gemeinsam den Weg zu Ihrer perfekten Immobilie finden. 
-                Kontaktieren Sie uns noch heute für ein unverbindliches Beratungsgespräch.
+                Lassen Sie uns gemeinsam den Weg zu Ihrer perfekten Immobilie finden. Kontaktieren Sie uns noch heute
+                für ein unverbindliches Beratungsgespräch.
               </p>
-              <Button 
-                size="lg" 
-                variant="accent" 
-                className="text-lg px-12"
-              >
+              <Button size="lg" variant="accent" className="text-lg px-12">
                 Jetzt Kontakt aufnehmen
               </Button>
             </CardContent>
