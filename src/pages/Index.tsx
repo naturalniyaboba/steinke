@@ -4,10 +4,12 @@ import { Services } from "@/components/Services";
 import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { ContentProtection } from "@/components/ContentProtection";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen select-none">
+      <ContentProtection />
       <Header />
       <main>
         <section id="home">
