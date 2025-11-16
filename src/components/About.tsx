@@ -1,4 +1,5 @@
 import { MapPin, Globe2 } from "lucide-react";
+import ownerPhoto from "@/assets/owner-photo.jpg";
 
 export const About = () => {
   return (
@@ -10,6 +11,25 @@ export const About = () => {
               Über Steinke Immobilien
             </h2>
             <div className="w-24 h-1 bg-gradient-accent mx-auto mb-8" />
+          </div>
+
+          {/* Owner Section */}
+          <div className="flex flex-col md:flex-row gap-8 items-center mb-16">
+            <div className="md:w-1/3">
+              <img 
+                src={ownerPhoto} 
+                alt="Inhaberin Steinke Immobilien" 
+                className="rounded-2xl shadow-lg w-full object-cover aspect-square"
+              />
+            </div>
+            <div className="md:w-2/3 space-y-4">
+              <h3 className="text-3xl font-bold text-foreground">Ihre Ansprechpartnerin</h3>
+              <p className="text-xl text-foreground/80 leading-relaxed">
+                Mit langjähriger Erfahrung und Leidenschaft für Immobilien begleite ich Sie persönlich 
+                auf dem Weg zu Ihrer Traumimmobilie. Vertrauen, Kompetenz und individuelle Betreuung 
+                stehen bei mir an erster Stelle.
+              </p>
+            </div>
           </div>
 
           <div className="prose prose-lg max-w-none space-y-6 text-foreground/80">
