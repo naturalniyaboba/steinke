@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { Home, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import { useState } from "react";
 import { ContactFormDialog } from "@/components/ContactFormDialog";
+import logo from "@/assets/steinke-logo.png";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,15 +20,13 @@ export const Header = () => {
       <nav className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-gradient-accent rounded-lg flex items-center justify-center">
-              <Home className="w-6 h-6 text-accent-foreground" />
-            </div>
-            <div>
-              <span className="font-bold text-xl text-foreground">Steinke</span>
-              <span className="block text-xs text-muted-foreground -mt-1">Immobilien</span>
-            </div>
-          </div>
+          <a href="#home" className="flex items-center">
+            <img 
+              src={logo} 
+              alt="Steinke Immobilien Logo" 
+              className="h-12 w-auto object-contain"
+            />
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
