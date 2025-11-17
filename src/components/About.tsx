@@ -15,14 +15,14 @@ export const About = () => {
 
           {/* Owner Section */}
           <div className="flex flex-col md:flex-row gap-8 items-center mb-16">
-            <div className="md:w-1/3">
+            <div className="flex justify-center md:justify-start">
               <img 
                 src={ownerPhoto} 
                 alt="Inhaberin Steinke Immobilien" 
-                className="rounded-2xl shadow-lg w-full object-cover aspect-square"
+                className="rounded-full shadow-lg w-40 h-40 object-cover"
               />
             </div>
-            <div className="md:w-2/3 space-y-4">
+            <div className="flex-1 space-y-4">
               <h3 className="text-3xl font-bold text-foreground">Ihre Ansprechpartnerin</h3>
               <p className="text-xl text-foreground/80 leading-relaxed">
                 Mit langjähriger Erfahrung und Leidenschaft für Immobilien begleite ich Sie persönlich 
