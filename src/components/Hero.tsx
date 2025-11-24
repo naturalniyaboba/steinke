@@ -24,7 +24,7 @@ export const Hero = () => {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6 leading-tight">
-            Ihr Traumhaus wartet auf Sie
+            Herzlich willkommen bei Steinke Immobilien
           </h1>
           
           <p className="text-xl md:text-2xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
@@ -33,11 +33,11 @@ export const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
-            <Button size="lg" variant="accent" className="text-lg px-8">
+            <Button size="lg" variant="hero" className="text-lg px-8">
               Immobilien entdecken
               <ArrowRight className="ml-2" />
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 bg-background/10 backdrop-blur-sm border-primary-foreground/30 text-primary-foreground hover:bg-background/20">
+            <Button size="lg" variant="secondary" className="text-lg px-8 border-2 border-primary/20 hover:border-primary/40">
               Beratung anfragen
             </Button>
           </div>
