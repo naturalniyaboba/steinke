@@ -9,24 +9,24 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 200 20% 25%;
+    --foreground: 200 25% 25%;
 
     --card: 0 0% 100%;
-    --card-foreground: 200 20% 25%;
+    --card-foreground: 200 25% 25%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 200 20% 25%;
+    --popover-foreground: 200 25% 25%;
 
-    --primary: 195 85% 45%;
+    --primary: 195 85% 32%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 195 85% 92%;
-    --secondary-foreground: 195 85% 30%;
+    --secondary: 195 75% 90%;
+    --secondary-foreground: 195 85% 25%;
 
     --muted: 195 30% 95%;
-    --muted-foreground: 200 15% 50%;
+    --muted-foreground: 200 20% 45%;
 
-    --accent: 195 95% 55%;
+    --accent: 195 90% 42%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
@@ -34,15 +34,15 @@ All colors MUST be HSL.
 
     --border: 195 30% 88%;
     --input: 195 30% 88%;
-    --ring: 195 85% 45%;
+    --ring: 195 85% 32%;
 
     --radius: 0.5rem;
     
-    --gradient-hero: linear-gradient(135deg, hsl(195 85% 45% / 0.8), hsl(195 95% 55% / 0.7));
-    --gradient-accent: linear-gradient(135deg, hsl(195 95% 55%), hsl(195 85% 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(195 85% 32% / 0.8), hsl(195 90% 42% / 0.7));
+    --gradient-accent: linear-gradient(135deg, hsl(195 90% 42%), hsl(195 85% 52%));
     
-    --shadow-elegant: 0 10px 40px -10px hsl(195 85% 45% / 0.25);
-    --shadow-card: 0 4px 20px -2px hsl(195 50% 50% / 0.12);
+    --shadow-elegant: 0 10px 40px -10px hsl(195 85% 32% / 0.25);
+    --shadow-card: 0 4px 20px -2px hsl(195 60% 40% / 0.12);
     
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -73,7 +73,7 @@ All colors MUST be HSL.
     --popover: 195 45% 12%;
     --popover-foreground: 195 30% 95%;
 
-    --primary: 195 95% 55%;
+    --primary: 195 90% 45%;
     --primary-foreground: 195 50% 8%;
 
     --secondary: 195 40% 18%;
@@ -82,7 +82,7 @@ All colors MUST be HSL.
     --muted: 195 40% 18%;
     --muted-foreground: 195 20% 65%;
 
-    --accent: 195 95% 60%;
+    --accent: 195 90% 50%;
     --accent-foreground: 195 50% 8%;
 
     --destructive: 0 62.8% 30.6%;
@@ -90,10 +90,10 @@ All colors MUST be HSL.
 
     --border: 195 40% 18%;
     --input: 195 40% 18%;
-    --ring: 195 95% 55%;
+    --ring: 195 90% 45%;
     
     --gradient-hero: linear-gradient(135deg, hsl(195 50% 8% / 0.8), hsl(195 45% 15% / 0.7));
-    --gradient-accent: linear-gradient(135deg, hsl(195 95% 55%), hsl(195 95% 65%));
+    --gradient-accent: linear-gradient(135deg, hsl(195 90% 45%), hsl(195 90% 55%));
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
