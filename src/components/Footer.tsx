@@ -55,7 +55,7 @@ export const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4">Kontakt</h3>
             <ul className="space-y-2 text-primary-foreground/80">
-              <li>Großraum Leipzig</li>
+              <li>Adresse: Nonnenstraße 7, 04229 Leipzig</li>
               <li>info@steinke-immobilien.com</li>
               <li>+49 (0) 157 387 180 34</li>
             </ul>
