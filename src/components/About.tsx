@@ -51,7 +51,7 @@ export const About = () => {
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Regional</h3>
                   <p className="text-muted-foreground">
-                    Spezialisiert auf den Großraum Leipzig mit umfassender Marktkenntnis
+                    Spezialisiert auf den Großraum Leipzig - fundierte Marktkenntnis, starke regionale Vernetzung.
                   </p>
                 </div>
               </div>
@@ -61,7 +61,7 @@ export const About = () => {
                 <div>
                   <h3 className="text-xl font-semibold mb-2">International</h3>
                   <p className="text-muted-foreground">
-                    Immobilien auf dem spanischen Festland und der sonnigen Insel Teneriffa
+                    Immobilien ohne Grenzen – Ihr Zugang zu internationalen Standorten und globalen Partnern.
                   </p>
                 </div>
               </div>
