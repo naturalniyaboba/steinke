@@ -18,7 +18,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Standort",
-    content: "Großraum Leipzig",
+    content: "Adresse: Nonnenstraße 7, 04229 Leipzig",
     link: null,
   },
 ];
