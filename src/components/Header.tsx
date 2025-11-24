@@ -1,12 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { useState } from "react";
-import { ContactFormDialog } from "@/components/ContactFormDialog";
 import logo from "@/assets/steinke-logo.png";
 
-export const Header = () => {
+interface HeaderProps {
+  onContactClick: () => void;
+}
+
+export const Header = ({ onContactClick }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
 
   const navItems = [
     { label: "Home", href: "#home" },
@@ -39,7 +41,7 @@ export const Header = () => {
                 {item.label}
               </a>
             ))}
-            <Button variant="hero" size="sm" onClick={() => setIsContactFormOpen(true)}>
+            <Button variant="hero" size="sm" onClick={onContactClick}>
               Anfragen
             </Button>
           </div>
@@ -68,15 +70,13 @@ export const Header = () => {
                   {item.label}
                 </a>
               ))}
-              <Button variant="hero" className="w-full mt-2" onClick={() => setIsContactFormOpen(true)}>
+              <Button variant="hero" className="w-full mt-2" onClick={onContactClick}>
                 Anfragen
               </Button>
             </div>
           </div>
         )}
       </nav>
-      
-      <ContactFormDialog open={isContactFormOpen} onOpenChange={setIsContactFormOpen} />
     </header>
   );
 };

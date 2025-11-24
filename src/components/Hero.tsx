@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-property.jpg";
 import { Home, ArrowRight } from "lucide-react";
-import { ContactFormDialog } from "@/components/ContactFormDialog";
-import { useState } from "react";
 
-export const Hero = () => {
-  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+interface HeroProps {
+  onContactClick: () => void;
+}
 
+export const Hero = ({ onContactClick }: HeroProps) => {
   const scrollToServices = () => {
     const servicesSection = document.getElementById('services');
     servicesSection?.scrollIntoView({ behavior: 'smooth' });
@@ -46,7 +46,7 @@ export const Hero = () => {
               Immobilien entdecken
               <ArrowRight className="ml-2" />
             </Button>
-            <Button size="lg" variant="secondary" className="text-lg px-8 border-2 border-primary/20 hover:border-primary/40" onClick={() => setIsContactFormOpen(true)}>
+            <Button size="lg" variant="secondary" className="text-lg px-8 border-2 border-primary/20 hover:border-primary/40" onClick={onContactClick}>
               Beratung anfragen
             </Button>
           </div>
@@ -59,8 +59,6 @@ export const Hero = () => {
           <div className="w-1 h-3 bg-primary-foreground/50 rounded-full" />
         </div>
       </div>
-
-      <ContactFormDialog open={isContactFormOpen} onOpenChange={setIsContactFormOpen} />
     </section>
   );
 };

@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Phone, Mail, MapPin } from "lucide-react";
-import { ContactFormDialog } from "@/components/ContactFormDialog";
-import { useState } from "react";
 
 const contactInfo = [
   {
@@ -25,9 +23,11 @@ const contactInfo = [
   },
 ];
 
-export const Contact = () => {
-  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+interface ContactProps {
+  onContactClick: () => void;
+}
 
+export const Contact = ({ onContactClick }: ContactProps) => {
   return (
     <section className="py-24 bg-background relative overflow-hidden">
       {/* Decorative Background */}
@@ -72,15 +72,13 @@ export const Contact = () => {
                 Lassen Sie uns gemeinsam den Weg zu Ihrer perfekten Immobilie finden. Kontaktieren Sie uns noch heute
                 für ein unverbindliches Beratungsgespräch.
               </p>
-              <Button size="lg" variant="accent" className="text-lg px-12" onClick={() => setIsContactFormOpen(true)}>
+              <Button size="lg" variant="accent" className="text-lg px-12" onClick={onContactClick}>
                 Jetzt Kontakt aufnehmen
               </Button>
             </CardContent>
           </Card>
         </div>
       </div>
-
-      <ContactFormDialog open={isContactFormOpen} onOpenChange={setIsContactFormOpen} />
     </section>
   );
 };
