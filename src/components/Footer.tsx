@@ -1,4 +1,5 @@
 import { Home } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -61,8 +62,30 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/20 pt-8 text-center text-primary-foreground/60">
-          <p>&copy; {currentYear} Steinke Immobilien. Alle Rechte vorbehalten.</p>
+        <div className="border-t border-primary-foreground/20 pt-8">
+          <div className="flex flex-wrap justify-center gap-6 mb-4">
+            <Link 
+              to="/impressum" 
+              className="text-primary-foreground/80 hover:text-accent transition-colors font-medium"
+            >
+              Impressum
+            </Link>
+            <Link 
+              to="/datenschutz" 
+              className="text-primary-foreground/80 hover:text-accent transition-colors font-medium"
+            >
+              Datenschutz
+            </Link>
+            <Link 
+              to="/agb" 
+              className="text-primary-foreground/80 hover:text-accent transition-colors font-medium"
+            >
+              AGB
+            </Link>
+          </div>
+          <p className="text-center text-primary-foreground/60">
+            &copy; {currentYear} Steinke Immobilien. Alle Rechte vorbehalten.
+          </p>
         </div>
       </div>
     </footer>
