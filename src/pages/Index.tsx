@@ -5,15 +5,21 @@ import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { ContentProtection } from "@/components/ContentProtection";
+import { ContactFormDialog } from "@/components/ContactFormDialog";
+import { useState } from "react";
 
 const Index = () => {
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+
+  const openContactForm = () => setIsContactFormOpen(true);
+
   return (
     <div className="min-h-screen select-none">
       <ContentProtection />
-      <Header />
+      <Header onContactClick={openContactForm} />
       <main>
         <section id="home">
-          <Hero />
+          <Hero onContactClick={openContactForm} />
         </section>
         <section id="services">
           <Services />
@@ -22,10 +28,11 @@ const Index = () => {
           <About />
         </section>
         <section id="contact">
-          <Contact />
+          <Contact onContactClick={openContactForm} />
         </section>
       </main>
       <Footer />
+      <ContactFormDialog open={isContactFormOpen} onOpenChange={setIsContactFormOpen} />
     </div>
   );
 };

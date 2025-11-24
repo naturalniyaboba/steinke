@@ -2,11 +2,15 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import { ContactFormDialog } from "@/components/ContactFormDialog";
+import { useState } from "react";
 
 const Impressum = () => {
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+
   return (
     <div className="min-h-screen">
-      <Header />
+      <Header onContactClick={() => setIsContactFormOpen(true)} />
       <main className="container mx-auto px-4 pt-32 pb-16 max-w-4xl">
         <Link 
           to="/" 
@@ -61,6 +65,7 @@ const Impressum = () => {
         </div>
       </main>
       <Footer />
+      <ContactFormDialog open={isContactFormOpen} onOpenChange={setIsContactFormOpen} />
     </div>
   );
 };
