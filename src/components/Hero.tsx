@@ -27,16 +27,16 @@ export const Hero = ({ onContactClick }: HeroProps) => {
       {/* Content */}
       <div className="container mx-auto px-4 z-10 text-center">
         <div className="max-w-4xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-1000">
-          <div className="flex items-center justify-center gap-2 text-accent mb-4">
+          <div className="flex items-center justify-center gap-2 text-white mb-4">
             <Home className="w-8 h-8" />
             <span className="text-lg font-semibold tracking-wider uppercase">Steinke Immobilien</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
             Herzlich willkommen bei Steinke Immobilien
           </h1>
           
-          <p className="text-xl md:text-2xl text-primary-foreground/90 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
             Ihr erster und zuverlässiger Ansprechpartner für In- und Auslandsimmobilien. 
             Wir begleiten Sie professionell auf dem Weg zu Ihrer Wunschimmobilie.
           </p>
