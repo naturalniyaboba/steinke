@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Home, Key, TrendingUp, Users, Shield, Clock, ExternalLink } from "lucide-react";
 import rentalImage from "@/assets/rental-service.jpg";
-import salesImage from "@/assets/sales-service.jpg";
+import salesImage from "@/assets/sales-service-gründerzeit.jpg";
 import consultationImage from "@/assets/consultation.jpg";
 
 const services = [
