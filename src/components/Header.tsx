@@ -26,7 +26,7 @@ export const Header = ({ onContactClick }: HeaderProps) => {
             <img 
               src={logo} 
               alt="Steinke Immobilien Logo" 
-              className="h-10 md:h-12 w-auto object-contain"
+              className="h-10 md:h-12 w-auto object-contain brightness-0 invert"
             />
           </a>
 
