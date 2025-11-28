@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Home, Key, TrendingUp, Users, Shield, Clock } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Home, Key, TrendingUp, Users, Shield, Clock, ExternalLink } from "lucide-react";
 import rentalImage from "@/assets/rental-service.jpg";
 import salesImage from "@/assets/sales-service-gründerzeit.jpg";
 import consultationImage from "@/assets/consultation.jpg";
@@ -52,9 +53,18 @@ export const Services = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Unsere Leistungen
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-6">
             Kaufen - Verkaufen, Mieten - Vermieten. Wir sind Ihr kompetenter Partner.
           </p>
+          <Button 
+            variant="default" 
+            size="lg"
+            className="mt-4"
+            onClick={() => window.open('https://www.steinke-immobilien.com/', '_blank')}
+          >
+            Unsere Angebote ansehen
+            <ExternalLink className="ml-2 w-4 h-4" />
+          </Button>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 mb-24">
