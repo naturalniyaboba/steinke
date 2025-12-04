@@ -59,7 +59,7 @@ export const Services = () => {
           <p className="text-lg text-muted-foreground mb-6">
             Eine Auswahl unserer Objekte finden Sie auf{" "}
             <a 
-              href="https://www.steinke-immobilien.com/" 
+              href="https://www.immobilienscout24.de/anbieter/profil/steinke-immobilien-04229-leipzig" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-primary underline hover:text-primary/80 transition-colors font-medium"
