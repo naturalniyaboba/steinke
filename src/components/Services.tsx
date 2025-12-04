@@ -53,8 +53,19 @@ export const Services = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Unsere Leistungen
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-6">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-4">
             Kaufen - Verkaufen, Mieten - Vermieten. Wir sind Ihr kompetenter Partner.
+          </p>
+          <p className="text-lg text-muted-foreground mb-6">
+            Eine Auswahl unserer Objekte finden Sie auf{" "}
+            <a 
+              href="https://www.steinke-immobilien.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-primary underline hover:text-primary/80 transition-colors font-medium"
+            >
+              ImmobilienScout24
+            </a>
           </p>
           <Button 
             variant="default" 
