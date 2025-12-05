@@ -71,7 +71,7 @@ export const Services = () => {
             variant="default" 
             size="lg"
             className="mt-4"
-            onClick={() => window.open('https://www.steinke-immobilien.com/', '_blank')}
+            onClick={() => window.open('https://www.immobilienscout24.de/anbieter/profil/steinke-immobilien-04229-leipzig', '_blank')}
           >
             Unsere Angebote ansehen
             <ExternalLink className="ml-2 w-4 h-4" />

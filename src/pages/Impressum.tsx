@@ -36,8 +36,7 @@ const Impressum = () => {
               <strong>Kontakt:</strong><br />
               Tel: 0341 – 86 266 507<br />
               Mobil: 0157- 38718034<br />
-              E-Mail: <a href="mailto:info@steinke-immobilien.com" className="text-primary hover:underline">info@steinke-immobilien.com</a><br />
-              Homepage: <a href="https://www.steinke-immobilien.com" className="text-primary hover:underline">www.steinke-immobilien.com</a>
+              E-Mail: <a href="mailto:info@steinke-immobilien.com" className="text-primary hover:underline">info@steinke-immobilien.com</a>
             </p>
           </div>
 
