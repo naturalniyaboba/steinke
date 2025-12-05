@@ -22,19 +22,24 @@ try {
       // MIT License
       // https://github.com/rafgraph/spa-github-pages
       (function() {
-        var pathSegmentsToKeep = 1; // Keep /steinke/ segment
-        var base = '/steinke/';
-        
-        var l = window.location;
-        var redirect = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-          base + '?/' +
-          l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-          l.hash;
-        
-        // Only redirect if we're actually on a 404 page
-        if (l.pathname.includes('404.html') || (!l.pathname.endsWith('index.html') && l.pathname !== base && l.pathname !== base.slice(0, -1))) {
-          l.replace(redirect);
+        try {
+          var base = '/steinke/';
+          var l = window.location;
+          var pathname = l.pathname;
+          
+          // Only redirect if we're on 404.html page
+          // Don't redirect if we're on index.html or base path
+          if (pathname.includes('404.html')) {
+            var pathSegmentsToKeep = 1; // Keep /steinke/ segment
+            var redirect = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+              base + '?/' +
+              pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+              (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+              l.hash;
+            l.replace(redirect);
+          }
+        } catch (e) {
+          console.error('404 redirect error:', e);
         }
       })();
     </script>`;
