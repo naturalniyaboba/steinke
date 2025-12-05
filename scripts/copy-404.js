@@ -16,6 +16,7 @@ try {
   
   // Добавляем скрипт для обработки 404 ошибок GitHub Pages
   // Адаптировано из: https://github.com/rafgraph/spa-github-pages
+  // Этот скрипт будет работать только в 404.html, не в index.html
   const redirectScript = `
     <script type="text/javascript">
       // Single Page Apps for GitHub Pages
@@ -27,16 +28,22 @@ try {
           var l = window.location;
           var pathname = l.pathname;
           
-          // Only redirect if we're on 404.html page
-          // Don't redirect if we're on index.html or base path
-          if (pathname.includes('404.html')) {
+          // Only redirect if we're actually on 404.html page (not index.html)
+          // This script is only in 404.html, so if we're here, we need to redirect
+          if (pathname.includes('404.html') || (!pathname.includes('index.html') && pathname !== base && pathname !== base.slice(0, -1))) {
             var pathSegmentsToKeep = 1; // Keep /steinke/ segment
+            var pathToRedirect = pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~');
+            if (!pathToRedirect) pathToRedirect = '';
+            
             var redirect = l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-              base + '?/' +
-              pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+              base + '?/' + pathToRedirect +
               (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
               l.hash;
-            l.replace(redirect);
+            
+            // Only redirect if we're not already on the correct page
+            if (l.href !== redirect) {
+              l.replace(redirect);
+            }
           }
         } catch (e) {
           console.error('404 redirect error:', e);

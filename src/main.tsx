@@ -5,45 +5,45 @@ import "./index.css";
 // GitHub Pages SPA redirect handler
 // This code handles the redirect from 404.html to index.html
 // and restores the original path for React Router
-// Адаптировано из: https://github.com/rafgraph/spa-github-pages
 (function() {
   try {
     const base = '/steinke/';
-    
-    // Check if we're coming from a 404 redirect (URL contains ?/)
     const search = window.location.search;
-    if (search && search.includes('?/')) {
-      // Extract the path from the query string
-      const pathAndQuery = search.slice(2).split('#');
-      const pathPart = pathAndQuery[0];
-      const hash = pathAndQuery[1] || '';
-      
-      // Split path and query parameters
-      const parts = pathPart.split('&');
-      const path = parts[0].replace(/~and~/g, '&');
-      const queryParams = parts.slice(1).map(p => p.replace(/~and~/g, '&')).join('&');
-      
-      // Reconstruct the URL
-      const newPath = base + path;
-      const newSearch = queryParams ? '?' + queryParams : '';
-      
-      // Replace the current URL without reload
-      window.history.replaceState(null, '', newPath + newSearch + (hash ? '#' + hash : ''));
+    
+    // Only process if we have a redirect query parameter
+    if (search && search.startsWith('?/')) {
+      try {
+        // Extract the path from the query string
+        const queryPart = search.slice(2); // Remove '?/'
+        const hashIndex = queryPart.indexOf('#');
+        const queryWithoutHash = hashIndex >= 0 ? queryPart.slice(0, hashIndex) : queryPart;
+        const hash = hashIndex >= 0 ? queryPart.slice(hashIndex) : '';
+        
+        // Split path and query parameters
+        const parts = queryWithoutHash.split('&');
+        const path = parts[0] ? parts[0].replace(/~and~/g, '&') : '';
+        const queryParams = parts.slice(1).filter(p => p).map(p => p.replace(/~and~/g, '&')).join('&');
+        
+        // Reconstruct the URL
+        const newPath = base + (path || '');
+        const newSearch = queryParams ? '?' + queryParams : '';
+        
+        // Replace the current URL without reload
+        window.history.replaceState(null, '', newPath + newSearch + hash);
+      } catch (e) {
+        console.error('Error processing 404 redirect:', e);
+      }
     }
   } catch (e) {
     console.error('Error in redirect handler:', e);
   }
 })();
 
-// Render the app with error handling
+// Render the app
 const rootElement = document.getElementById("root");
-if (!rootElement) {
-  console.error('Root element not found!');
+if (rootElement) {
+  createRoot(rootElement).render(<App />);
 } else {
-  try {
-    createRoot(rootElement).render(<App />);
-  } catch (error) {
-    console.error('Error rendering app:', error);
-    rootElement.innerHTML = '<div style="padding: 20px; font-family: sans-serif;"><h1>Ошибка загрузки</h1><p>Произошла ошибка при загрузке приложения. Пожалуйста, обновите страницу.</p><p style="color: #666; font-size: 12px;">' + String(error) + '</p></div>';
-  }
+  console.error('Root element not found!');
+  document.body.innerHTML = '<div style="padding: 20px; font-family: sans-serif; text-align: center;"><h1>Ошибка загрузки</h1><p>Не удалось найти корневой элемент. Пожалуйста, обновите страницу.</p></div>';
 }
