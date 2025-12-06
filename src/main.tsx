@@ -1,6 +1,7 @@
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
+import { ErrorBoundary } from "./components/ErrorBoundary";
 
 // Обработка редиректов из 404.html для GitHub Pages SPA
 try {
@@ -24,14 +25,25 @@ try {
   if (!rootElement) {
     throw new Error('Root element not found');
   }
-  createRoot(rootElement).render(<App />);
+  const root = createRoot(rootElement);
+  root.render(
+    <ErrorBoundary>
+      <App />
+    </ErrorBoundary>
+  );
 } catch (error) {
   console.error('Failed to render app:', error);
-  document.body.innerHTML = `
-    <div style="padding: 20px; font-family: sans-serif; text-align: center;">
-      <h1>Ошибка загрузки</h1>
-      <p>Не удалось загрузить приложение. Пожалуйста, обновите страницу.</p>
-      <p style="color: #666; font-size: 12px; margin-top: 10px;">${String(error)}</p>
-    </div>
-  `;
+  const rootElement = document.getElementById("root");
+  if (rootElement) {
+    rootElement.innerHTML = `
+      <div style="padding: 20px; font-family: sans-serif; text-align: center; min-height: 100vh; display: flex; flex-direction: column; justify-content: center;">
+        <h1 style="font-size: 2rem; margin-bottom: 1rem;">Ошибка загрузки</h1>
+        <p style="margin-bottom: 1rem;">Не удалось загрузить приложение. Пожалуйста, обновите страницу.</p>
+        <button onclick="window.location.reload()" style="padding: 10px 20px; font-size: 1rem; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; margin: 0 auto;">
+          Обновить страницу
+        </button>
+        <p style="color: #666; font-size: 12px; margin-top: 20px;">${String(error)}</p>
+      </div>
+    `;
+  }
 }

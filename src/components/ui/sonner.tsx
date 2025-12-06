@@ -1,21 +1,12 @@
 import * as React from "react";
-import { useTheme } from "next-themes";
 import { Toaster as Sonner, toast } from "sonner";
-import { useEffect, useState } from "react";
 
 type ToasterProps = React.ComponentProps<typeof Sonner>;
 
 const Toaster = ({ ...props }: ToasterProps) => {
-  const { theme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   return (
     <Sonner
-      theme={(mounted ? theme : "light") as ToasterProps["theme"]}
+      theme="light"
       className="toaster group"
       toastOptions={{
         classNames: {
